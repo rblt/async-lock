@@ -9,7 +9,7 @@ see and build the source code with the given Visual Studio 2015 solution. The te
 
 #### Usage examples
 You can create many `AsyncLock` instances if needed:
-```
+```c#
 private AsyncLock Lock = new AsyncLock();
 
 var token = new object();
@@ -20,7 +20,7 @@ using(await Lock.AcquireAsync(token)) {
 ```
 
 Or use the singleton version across your application:
-```
+```c#
 using(await AsyncLock.CreateAsync(token)) {
   // critical section
 }
